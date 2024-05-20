@@ -22,7 +22,3 @@ class TweetsSearcher:
     def only_in_location(self, location, df):
         data_frame = df.filter(col(self.user_location_column).equalTo(location))
         return data_frame
-        
-    def only_in_location(self, location, df):
-        data_frame = df.filter(col(self.user_location_column).equalTo(location))
-        return data_frame
