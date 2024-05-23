@@ -146,4 +146,4 @@ tweets_searcher.only_in_location("United States", cleaned_tweets_df).show()
 
 \## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request.  
