@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import regexp_replace, col, split, explode_outer, avg
+from pyspark.sql.functions import regexp_replace, col, split, explode_outer, avg, round
 
 class TweetsAnalyzer:
     hashtag_column = "hashtags"
@@ -31,5 +31,5 @@ class TweetsAnalyzer:
                        .filter(col(self.user_location_column).isNotNull()) \
                        .dropDuplicates([self.user_name_column]) \
                        .groupBy(self.user_location_column) \
-                       .agg(avg(self.user_followers_column).alias("avg_user_followers"))
+                       .agg(round(avg(self.user_followers_column), 0).alias("avg_user_followers"))
         return data_frame
