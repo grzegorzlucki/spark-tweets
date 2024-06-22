@@ -22,7 +22,7 @@ This project provides a set of tools for loading, cleaning, analyzing, and searc
 
 \```
 spark-tweets<br>
-├── analyzers
+├── analyzers<br>
 │   └── tweets_analyzer.py<br>
 ├── cleaners<br>
 │   └── tweets_cleaner.py<br>
