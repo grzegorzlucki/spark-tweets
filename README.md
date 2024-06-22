@@ -21,17 +21,16 @@ This project provides a set of tools for loading, cleaning, analyzing, and searc
 \## Project Structure
 
 \```
-spark-tweets/
-├── analyzers/
-│   └── tweets_analyzer.py
-├── cleaners/
-│   └── tweets_cleaner.py
-├── loaders/
-│   └── tweets_loader.py
-├── searchers/
-│   └── tweets_search.py
-└── src/
-    └── main.ipynb
+spark-tweets<br>
+├── analyzers
+│   └── tweets_analyzer.py<br>
+├── cleaners<br>
+│   └── tweets_cleaner.py<br>
+├── loaders<br>
+│   └── tweets_loader.py<br>
+├── searchers<br>
+│   └── tweets_search.py<br>
+└── main.py
 \```
 
 \## Installation
