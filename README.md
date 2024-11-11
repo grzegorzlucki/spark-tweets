@@ -1,4 +1,4 @@
-\# Spark Tweets Analysis Project
+# Spark Tweets Analysis Project
 
 This project provides a set of tools for loading, cleaning, analyzing, and searching tweets using PySpark. The main components include:
 - TweetsLoader: For loading tweets from CSV files.
@@ -6,7 +6,7 @@ This project provides a set of tools for loading, cleaning, analyzing, and searc
 - TweetsAnalyzer: For analyzing various aspects of tweets.
 - TweetsSearcher: For searching tweets based on specific criteria.
 
-\## Table of Contents
+## Table of Contents
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -18,9 +18,8 @@ This project provides a set of tools for loading, cleaning, analyzing, and searc
 - [Contributing](#contributing)
 - [License](#license)
 
-\## Project Structure
+## Project Structure
 
-\```
 spark-tweets<br>
 ├── analyzers<br>
 │   └── tweets_analyzer.py<br>
@@ -31,9 +30,9 @@ spark-tweets<br>
 ├── searchers<br>
 │   └── tweets_search.py<br>
 └── main.py
-\```
 
-\## Installation
+
+## Installation
 
 To use this project, you need to have Python and PySpark installed. Follow these steps to set up the environment:
 
@@ -43,13 +42,13 @@ To use this project, you need to have Python and PySpark installed. Follow these
     pip install pyspark
     \```
 
-\## Usage
+## Usage
 
-\### TweetsLoader
+### TweetsLoader
 
 The `TweetsLoader` class is responsible for loading tweet data from CSV files. It can load individual CSV files and merge them into a single DataFrame.
 
-\```python
+```python
 from tweets_loader import TweetsLoader
 
 tweets_loader = TweetsLoader()
@@ -58,24 +57,24 @@ all_tweets_df = tweets_loader.load_all_tweets({
     "grammys": "path/to/GRAMMYs_tweets.csv",
     "financial": "path/to/financial.csv"
 })
-\```
+```
 
-\### TweetsCleaner
+### TweetsCleaner
 
 The `TweetsCleaner` class cleans and preprocesses the tweet data, such as removing unwanted characters from hashtags and converting columns to appropriate data types.
 
-\```python
+```python
 from tweets_cleaner import TweetsCleaner
 
 tweets_cleaner = TweetsCleaner()
 cleaned_tweets_df = tweets_cleaner.clean_all_tweets(all_tweets_df).cache()
-\```
+```
 
 \### TweetsAnalyzer
 
 The `TweetsAnalyzer` class provides various methods to analyze the tweets, including calculating the frequency of hashtags, retweets, and sources, as well as the average number of followers per location.
 
-\```python
+```python
 from tweets_analyzer import TweetsAnalyzer
 
 tweets_analyzer = TweetsAnalyzer()
@@ -83,25 +82,25 @@ tweets_analyzer.calculate_hashtags(cleaned_tweets_df).show()
 tweets_analyzer.calculate_is_retweet(cleaned_tweets_df).show()
 tweets_analyzer.calculate_source(cleaned_tweets_df).show()
 tweets_analyzer.calculate_avg_user_followers_per_location(cleaned_tweets_df).show()
-\```
+```
 
-\### TweetsSearcher
+### TweetsSearcher
 
 The `TweetsSearcher` class allows for searching tweets based on specific keywords and filtering by user location.
 
-\```python
+```python
 from tweets_search import TweetsSearcher
 
 tweets_searcher = TweetsSearcher()
 tweets_searcher.search_by_key_words(["Trump"], cleaned_tweets_df).show()
 tweets_searcher.only_in_location("United States", cleaned_tweets_df).show()
-\```
+```
 
-\### Example Notebook
+### Example Notebook
 
 The `src/main.ipynb` Jupyter notebook demonstrates how to use the different components of this project. It includes examples of loading, cleaning, analyzing, and searching tweets.
 
-\```python
+```python
 import sys
 sys.path.append('path/to/loaders')
 sys.path.append('path/to/cleaners')
@@ -141,8 +140,4 @@ tweets_analyzer.calculate_avg_user_followers_per_location(cleaned_tweets_df).sho
 
 tweets_searcher.search_by_key_words(["Trump"], cleaned_tweets_df).show()
 tweets_searcher.only_in_location("United States", cleaned_tweets_df).show()
-\```
-
-\## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.  
+```
